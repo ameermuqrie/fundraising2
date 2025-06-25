@@ -2,6 +2,14 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String role = (String) session.getAttribute("role");
+    if (role == null) {
+        // User is not logged in, redirect to login page
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <html>
 <head>
     <title>Your Donations</title>

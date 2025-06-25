@@ -2,6 +2,12 @@
 <%@ page import="java.util.*, model.Campaign, model.CampaignDAO" %>
 <%
     String role = (String) session.getAttribute("role");
+    if (role == null) {
+        // User is not logged in, redirect to login page
+        response.sendRedirect("login.jsp");
+        return;
+    }
+    
     if (role == null) role = "user"; // default
     String dashboardLink = "user_dashboard.jsp";
     if ("admin".equals(role)) {

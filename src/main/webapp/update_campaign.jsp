@@ -7,6 +7,15 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="model.CampaignDAO, model.Campaign" %>
 <%
+    String role = (String) session.getAttribute("role");
+    if (role == null) {
+        // User is not logged in, redirect to login page
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
+<%
     int id = Integer.parseInt(request.getParameter("id"));
     Campaign campaign = new CampaignDAO().getCampaignById(id);
 %>
