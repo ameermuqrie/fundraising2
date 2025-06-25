@@ -100,6 +100,13 @@
             background-color: #b78c54; /* Darker shade on hover */
             transform: translateY(-2px);
         }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+
         main img {
             max-width: 100%;
             height: auto;
@@ -140,12 +147,15 @@
             <p>Thank you for your support. You can make a difference through the options below.</p>
         </div>
 
-        <div class="action-containers">
-            <div class="dashboard-container">
-                <h3>Make a Donation</h3>
-                <p>Your contribution helps us achieve our goals. Every little bit makes a big difference!</p>
+        <div class="dashboard-container">
+            <h3>Make a Donation</h3>
+            <p>Your contribution helps us achieve our goals. Every little bit makes a big difference!</p>
+            <div class="button-group">
                 <a href="donationForm.jsp" class="button">Donate Now</a>
+                <a href="donationHistory.jsp" class="button">View Donation History</a>
             </div>
+        </div>
+
 
             <div class="dashboard-container">
                 <h3>Oversee Campaigns</h3>
