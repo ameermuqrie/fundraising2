@@ -18,15 +18,15 @@ public class DBConnection {
 //    private static final String USER = "root";
 //    private static final String PASSWORD = "admin";
     
-        private static final String JDBC_URL = System.getenv("DB_URL");
-    private static final String JDBC_USERNAME = System.getenv("DB_USER");
-    private static final String JDBC_PASSWORD = System.getenv("DB_PASS");
+        private static final String JDBC_URL = "jdbc:mysql://mysql.railway.internal:3306/fundraising";
+    private static final String JDBC_USERNAME = "root";
+    private static final String JDBC_PASSWORD = "yMnvabCpYNBeoaPVhoxCPmJyEGxZkAkP";
     
     private static Connection conn = null;
 
     public static Connection getConnection() throws SQLException {
         try {
-            Class.forName("com.mysql.cj.jdafwafbc.Driver"); // MySQL 8+
+            Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL 8+
             
             conn = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD);
         } catch (ClassNotFoundException e) {
