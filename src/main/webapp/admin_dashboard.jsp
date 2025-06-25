@@ -100,6 +100,13 @@
             background-color: #b78c54; /* Darker shade on hover */
             transform: translateY(-2px);
         }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; /* For responsiveness */
+        }   
+
         main img {
             max-width: 100%;
             height: auto;
@@ -156,8 +163,12 @@
             <div class="dashboard-container">
                 <h3>Make a Campaign</h3>
                 <p>Become an active participant in our fundraising efforts. Find a cause you care about and join in!</p>
-                <a href="create_campaign.jsp" class="button">Make Campaign Now</a>
+                <div class="button-group">
+                    <a href="create_campaign.jsp" class="button">Make Campaign Now</a>
+                    <a href="view_campaign.jsp" class="button">View Campaigns</a>
+                </div>
             </div>
+
         </div>
     </main>
 
