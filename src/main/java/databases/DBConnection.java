@@ -18,9 +18,9 @@ public class DBConnection {
 //    private static final String USER = "root";
 //    private static final String PASSWORD = "admin";
     
-        private static final String JDBC_URL = "jdbc:mysql://mysql.railway.internal:3306/fundraising";
-    private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "yMnvabCpYNBeoaPVhoxCPmJyEGxZkAkP";
+    private static final String JDBC_URL = "DB_URL";
+    private static final String JDBC_USERNAME = "DB_USER";
+    private static final String JDBC_PASSWORD = "DB_PASS";
     
     private static Connection conn = null;
 

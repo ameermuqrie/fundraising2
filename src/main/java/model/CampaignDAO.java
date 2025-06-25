@@ -2,16 +2,18 @@ package model;
 
 import java.sql.*;
 import java.util.*;
+import databases.DBConnection;
 
 public class CampaignDAO {
 
     private Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL JDBC Driver
-        } catch (ClassNotFoundException ex) {
-            throw new SQLException("MySQL JDBC Driver not found. Add it to your project libraries.", ex);
-        }
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+        //try {
+            //Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL JDBC Driver
+        //} catch (ClassNotFoundException ex) {
+            //throw new SQLException("MySQL JDBC Driver not found. Add it to your project libraries.", ex);
+        //}
+        //return DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+        return DBConnection.getConnection();
     }
 
     // Create a new campaign

@@ -7,12 +7,13 @@ import databases.DBConnection;
 public class UserDAO {
 
     private Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            throw new SQLException("MySQL JDBC driver not found.", ex);
-        }
-        return DriverManager.getConnection("jdbc:mysql://mysql.railway.internal:3306/fundraising", "root", "yMnvabCpYNBeoaPVhoxCPmJyEGxZkAkP");
+        //try {
+        //    Class.forName("com.mysql.cj.jdbc.Driver");
+        //} catch (ClassNotFoundException ex) {
+        //    throw new SQLException("MySQL JDBC driver not found.", ex);
+        //}
+        //return DriverManager.getConnection("jdbc:mysql://mysql.railway.internal:3306/fundraising", "root", "yMnvabCpYNBeoaPVhoxCPmJyEGxZkAkP");
+        return DBConnection.getConnection();
     }
 
     public void insertUser(User user) throws SQLException {
