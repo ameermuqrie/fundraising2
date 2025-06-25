@@ -12,7 +12,7 @@ public class UserDAO {
         } catch (ClassNotFoundException ex) {
             throw new SQLException("MySQL JDBC driver not found.", ex);
         }
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+        return DriverManager.getConnection("jdbc:mysql://mysql.railway.internal:3306/fundraising", "root", "yMnvabCpYNBeoaPVhoxCPmJyEGxZkAkP");
     }
 
     public void insertUser(User user) throws SQLException {
