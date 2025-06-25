@@ -4,6 +4,7 @@
  */
 
 
+import databases.DBConnection;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -29,7 +30,7 @@ public class DeleteDonationServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+            Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement("DELETE FROM donations WHERE donationID = ?");
             ps.setInt(1, donationID);
             ps.executeUpdate();

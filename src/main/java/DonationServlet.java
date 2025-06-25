@@ -1,3 +1,4 @@
+import databases.DBConnection;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -47,7 +48,7 @@ public class DonationServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+            con = DBConnection.getConnection();
 
             // Step 1: Verify if the provided User ID exists in the 'users' table
             checkUserPs = con.prepareStatement("SELECT userID FROM users WHERE userID = ?");
