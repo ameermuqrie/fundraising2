@@ -1,3 +1,4 @@
+<%@page import="databases.DBConnection"%>
 <%@ page import="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -128,7 +129,7 @@
             ResultSet rs = null;
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fundraising", "root", "admin");
+                con = DBConnection.getConnection();
                 stmt = con.createStatement();
                 
                 // SQL query updated to select directly from 'donations' table

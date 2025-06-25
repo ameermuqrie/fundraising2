@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,15 @@
 </head>
 <body>
     <%
-        // Invalidate the current session
+        // Prevent caching
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+        response.setDateHeader("Expires", 0); // Proxies
+
+        // Invalidate the session
         session.invalidate();
 
-        // Redirect to the home page (or login page) after a short delay
-        // You can change "index.html" to your desired landing page (e.g., "login.jsp")
+        // Redirect to the login page
         response.sendRedirect("index.html");
     %>
 </body>
